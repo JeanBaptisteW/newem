@@ -1,0 +1,29 @@
+h2{
+    border-bottom: 3px solid #00D9FF;
+    padding-bottom: 7px;
+    display: inline-block;
+    margin-top: 0px;
+}
+
+mat-toolbar{
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    background: #1ad4ff;
+    background: -webkit-linear-gradient(left, #1ad4ff, #fb2a79);
+    background: -o-linear-gradient(right, #1ad4ff, #fb2a79);
+    background: -moz-linear-gradient(right, #1ad4ff, #fb2a79);
+    background: linear-gradient(to right, #1ad4ff, #fb2a79);
+}
+.tag a{
+    display: block;
+    background-color: #f7c600;
+    text-align: center;
+    color: #ffffff;
+    height: 23px;
+    line-height: 24px;
+    padding: 0 8px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    float: left;
+    font-size: 14px;
+    border-radius: 4px;
+}

@@ -1,0 +1,43 @@
+<div class="container-fluid" style="padding: 0;">
+  <mat-toolbar>My App</mat-toolbar>
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="row" style="padding:3rem">
+        <span class="tag"><a href="#">Top</a></span>
+        <span class="tag" *ngFor="let alphabet of  alphabets"><a pageScroll pageScrollDuration= '1250' href="#{{alphabet}}">{{alphabet | uppercase}}</a></span>
+      </div>
+      </div>
+    <div class="col-lg-7">
+      <h2>Dictionnaire japonais ⇒ français de mangaka</h2>
+
+      <mat-card>
+        <p style="font-size:16px"> Sont répertoriés ici les mots et expressions japonais(es) que tu rencontreras en travaillant dans le manga et en
+          parcourant les pages du site. L'origine de cette liste date de 2005 quand j'ai débuté dans le métier d'assistant
+          de mangaka. Beaucoup de ces mots et expressions sont intrinsèques au dessin (mais aussi à l'imprimerie et à l'édition).
+          Par conséquent, certains ne sont ni trouvables dans un dictionnaire japonais-français, ni traductibles mot à mot.
+          Exemple : Torēsudai (support électrique de calque) est la table lumineuse. Débutant et ne retenant pas tout du
+          premier coup, je me suis créé un répertoire manga sur du papier. C'est par la suite, à partir de 2006 que j'ai
+          décidé de le partager sur internet et de le compléter au fur et à mesure que j'apprenais de nouveaux mots. Parce
+          que moi le premier, j'aurais été bien content de trouver ce genre de dictionnaire pour avoir moins de difficultés
+          à communiquer, et de part mon statut de pionnier, j'ai décidé de le créer et de le partager publiquement pour t'aider
+          quand tu en a besoin. Il a également l'avantage de pouvoir être complété et modifié à tout moment. Je t'invite
+          à y ajouter de nouvelles entrées et t'encourage à le partager autour de toi.
+        </p>
+      </mat-card>
+      <ul style="list-style: none;padding: 0;">
+        <li *ngFor="let alphabet of  alphabets">
+          <h3 id = {{alphabet}}>{{alphabet}}</h3>
+          <mat-card style="padding:0 !important">
+            <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+              <p style="margin-bottom: 0rem !important;">Top Text</p>
+            </nav>
+            contain definition
+          </mat-card>
+        </li>
+      </ul>
+
+
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
