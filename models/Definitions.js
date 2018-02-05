@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var DefinitionSchema = new mongoose.Schema({
-  frenchString: String,
-  japaneseString: String,
+  french: String,
+  japanese: String,
   definition: String,
   isPublished:Boolean,
   updated_at: { type: Date, default: Date.now },

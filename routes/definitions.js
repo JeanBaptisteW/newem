@@ -6,8 +6,8 @@ router.get('/', function(req, res, next) {
   // res.send('Express REST API');
   Definition.find(function(err, definitions){
     if (err){ res.send(err); }
-
-    res.json(definitions);
+     console.log(definitions)
+    res.send(definitions);
   });
 
 });
@@ -18,8 +18,8 @@ router.post('/', function(req, res, next) {
   host=req.get('host');
   var definition = new Definition();
 
-  definition.frenchString=req.body.frenchString;
-  definition.japaneseString= req.body.japaneseString;
+  definition.french=req.body.french;
+  definition.japanese= req.body.japanese;
   definition.definition=  req.body.definition;
   definition.isPublished = req.body.isPublished;
 
@@ -30,7 +30,7 @@ router.post('/', function(req, res, next) {
           if (err) { res.send(err); 
            }
  
-           res.json(definitionresponse);
+          //  res.json(definitionresponse);
   });
 });
 

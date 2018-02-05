@@ -1,3 +1,31 @@
-<p>
-  admin-dashboard works!
-</p>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" [(opened)]="opened" (opened)="events(true)" (closed)="events(false)">
+    <app-admin-sidebar></app-admin-sidebar>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+
+    <p *ngIf='isOpen'>
+      <button (click)="drawer.toggle()" mat-mini-fab color="warn">-</button>
+    </p>
+    <p *ngIf='!isOpen'>
+      <button (click)="drawer.toggle()" mat-mini-fab color="warn">+</button>
+    </p>
+   <div class="container-fluid">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="French" class="form-control" formControlName="french">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Japanese" class="form-control" formControlName="japanese">
+
+      </mat-form-field>
+      <textarea [froalaEditor] formControlName="definition" [(froalaModel)]="form.definition"></textarea>
+      <!-- <div [froalaView]="form.definition"></div> -->
+      <button type="submit" mat-raised-button color="accent">Submit</button>
+    </form>
+  </div>
+  </div>
+
+</mat-drawer-container>

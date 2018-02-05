@@ -1,0 +1,29 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* .example-sidenav-content {
+    display: flex;
+    height: 100%;
+
+} */
+
+.example-sidenav {
+    padding: 0;
+    box-shadow: 1px 0 15px -4px rgba(66, 70, 74, 0.8);
+}
+
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
