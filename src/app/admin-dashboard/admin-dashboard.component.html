@@ -1,5 +1,5 @@
 <mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side" [(opened)]="opened" (opened)="events(true)" (closed)="events(false)">
+  <mat-drawer #drawer class="example-sidenav" mode="side">
     <app-admin-sidebar></app-admin-sidebar>
   </mat-drawer>
 
@@ -21,7 +21,7 @@
         <input matInput placeholder="Japanese" class="form-control" formControlName="japanese">
 
       </mat-form-field>
-      <textarea [froalaEditor] formControlName="definition" [(froalaModel)]="form.definition"></textarea>
+      <textarea [froalaEditor] formControlName="definition" ></textarea>
       <!-- <div [froalaView]="form.definition"></div> -->
       <button type="submit" mat-raised-button color="accent">Submit</button>
     </form>
