@@ -12,6 +12,8 @@ export class DefinitionsComponent implements OnInit {
   constructor(public adminDefinitionService: AdminDefinitionService) {
     let str = "abcdefghijklmnopqrstuvwxyz";
     let alphaArray = str.split("");
+    console.log(alphaArray)
+
     this.alphabets = alphaArray;
   }
 

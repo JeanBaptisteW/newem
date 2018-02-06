@@ -3,10 +3,14 @@
   <div class="row">
     <div class="col-lg-3">
       <div class="row" style="padding:3rem">
-        <span class="tag"><a href="#">Top</a></span>
-        <span class="tag" *ngFor="let alphabet of  alphabets"><a pageScroll pageScrollDuration= '1250' href="#{{alphabet}}">{{alphabet | uppercase}}</a></span>
+        <span class="tag">
+          <a href="#">Top</a>
+        </span>
+        <span class="tag" *ngFor="let alphabet of  alphabets">
+          <a pageScroll pageScrollDuration='1250' href="#{{alphabet}}">{{alphabet | uppercase}}</a>
+        </span>
       </div>
-      </div>
+    </div>
     <div class="col-lg-7">
       <h2>Dictionnaire japonais ⇒ français de mangaka</h2>
 
@@ -26,13 +30,16 @@
       </mat-card>
       <ul style="list-style: none;padding: 0;">
         <li *ngFor="let alphabet of  alphabets">
-          <h3 id = {{alphabet}}>{{alphabet}}</h3>
-          <mat-card style="padding:0 !important">
-            <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-              <p style="margin-bottom: 0rem !important;">Top Text</p>
-            </nav>
-            contain definition
-          </mat-card>
+
+          <h3 id={{alphabet}}>{{alphabet}}</h3>
+          <div *ngFor="let definition of definitions">
+            <mat-card style="padding:0 !important" *ngIf="alphabet == definition.french.charAt(0)">
+              <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+                <p style="margin-bottom: 0rem !important;">{{definition.french}} &nbsp;&nbsp;&nbsp;&nbsp; {{definition.japanese}}</p>
+              </nav>
+              <div [innerHTML]="definition.definition"></div>
+            </mat-card>
+          </div>
         </li>
       </ul>
 
