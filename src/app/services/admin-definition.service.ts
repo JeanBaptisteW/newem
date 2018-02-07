@@ -15,27 +15,32 @@ export class AdminDefinitionService {
   constructor(private http: Http, private httpService: HttpService) { }
 
   /** Post: add the definition on the server */
-  addDefinition (definition): Observable<any> {
-    console.log('Add definition')
-        console.log(definition)
-    return this.http.post(environment.TOKEN_URL+'definitions', definition).pipe(
+  addDefinition(definition): Observable<any> {
+    return this.http.post(environment.TOKEN_URL + 'definitions', definition).pipe(
       tap(_ => console.log(`add definition`)),
       catchError(this.handleError<any>('addDefinition'))
     );
   }
 
 
-  getDefinitions():any{
-    return this.httpService.httpGet(environment.TOKEN_URL+'definitions');
+  getDefinitions(): any {
+    return this.httpService.httpGet(environment.TOKEN_URL + 'definitions');
   }
-   
-     /**
-   * Handle Http operation that failed.
-   * Let the app continue.
-   * @param operation - name of the operation that failed
-   * @param result - optional value to return as the observable result
-   */
-  private handleError<T> (operation = 'operation', result?: T) {
+
+  deleteDefinition(id): any {
+    return this.http.delete(environment.TOKEN_URL + 'definitions/' + id).pipe(
+      tap(_ => console.log(`delete definitions`)),
+      catchError(this.handleError<any>('deleteDefinitions'))
+    );
+  }
+
+  /**
+* Handle Http operation that failed.
+* Let the app continue.
+* @param operation - name of the operation that failed
+* @param result - optional value to return as the observable result
+*/
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure

@@ -1,1 +1,20 @@
-<router-outlet></router-outlet>
+<mat-drawer-container class="example-container" autosize *ngIf='isLogin'>
+    <mat-drawer #drawer class="example-sidenav" mode="side" [(opened)]="opened" (opened)="events(true)" (closed)="events(false)">
+        <app-admin-sidebar></app-admin-sidebar>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+
+        <p *ngIf='isOpen'>
+            <button (click)="drawer.toggle()" mat-mini-fab color="warn">-</button>
+        </p>
+        <p *ngIf='!isOpen'>
+            <button (click)="drawer.toggle()" mat-mini-fab color="warn">+</button>
+        </p>
+        <!-- <app-admin-dashboard></app-admin-dashboard> -->
+        <router-outlet *ngIf='isLogin'></router-outlet>
+    </div>
+
+</mat-drawer-container>
+
+<router-outlet *ngIf='!isLogin'></router-outlet>

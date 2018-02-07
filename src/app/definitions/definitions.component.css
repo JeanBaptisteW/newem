@@ -5,7 +5,7 @@ h2{
     margin-top: 0px;
 }
 
-mat-toolbar{
+.enav{
     box-shadow: 0 2px 5px rgba(0,0,0,0.26);
     background: #1ad4ff;
     background: -webkit-linear-gradient(left, #1ad4ff, #fb2a79);
@@ -26,4 +26,5 @@ mat-toolbar{
     float: left;
     font-size: 14px;
     border-radius: 4px;
+    
 }

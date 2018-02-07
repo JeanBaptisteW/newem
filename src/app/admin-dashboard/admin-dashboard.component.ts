@@ -11,7 +11,10 @@ import { AdminDefinitionService } from '../services/admin-definition.service';
 export class AdminDashboardComponent implements OnInit {
   form: FormGroup;
   isOpen: boolean;
+
+  public editorOptions: Object = { key: '159.89.21.52 mC3B4E4E5G3B2F4I1B1A8C6A6==' };
   @ViewChild('drawer') drawer: MatSidenav;
+
   constructor(private fb: FormBuilder, public adminDefinitionService: AdminDefinitionService) {
     this.createForm();
   }
@@ -20,14 +23,17 @@ export class AdminDashboardComponent implements OnInit {
 
   }
 
+  ngDoCheck(){
+    console.log(this.form.value)
+  }
   events(event) {
     this.isOpen = event;
   }
   createForm() {
     this.form = this.fb.group({
-      definition: '',
-      french: '',
-      japanese: ''
+      definition: [null, Validators.required],
+      french: [null, Validators.required],
+      japanese: [null, Validators.required],
     });
   }
   onSubmit() {

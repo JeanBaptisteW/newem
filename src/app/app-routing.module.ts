@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DefinitionsComponent } from './definitions/definitions.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminDefinitionsComponent } from './admin-definitions/admin-definitions.component';
 import { AuthGuard }                from './auth-guard.service';
 import { AuthService }          from './auth.service';
 const appRoutes: Routes = [
@@ -18,7 +19,10 @@ const appRoutes: Routes = [
     path: 'admin-dashboard',
     component: AdminDashboardComponent
   },
-
+  {
+    path: 'admin-definitions',
+    component: AdminDefinitionsComponent
+  },
   { path: '',   redirectTo: '/definitions', pathMatch: 'full' }
 ];
 

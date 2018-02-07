@@ -1,31 +1,18 @@
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <app-admin-sidebar></app-admin-sidebar>
-  </mat-drawer>
+<div class="container-fluid">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="French" formControlName="french">
+    </mat-form-field>
 
-  <div class="example-sidenav-content">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Japanese" formControlName="japanese">
 
-    <p *ngIf='isOpen'>
-      <button (click)="drawer.toggle()" mat-mini-fab color="warn">-</button>
-    </p>
-    <p *ngIf='!isOpen'>
-      <button (click)="drawer.toggle()" mat-mini-fab color="warn">+</button>
-    </p>
-   <div class="container-fluid">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="French" class="form-control" formControlName="french">
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Japanese" class="form-control" formControlName="japanese">
-
-      </mat-form-field>
-      <textarea [froalaEditor] formControlName="definition" ></textarea>
-      <!-- <div [froalaView]="form.definition"></div> -->
-      <button type="submit" mat-raised-button color="accent">Submit</button>
-    </form>
-  </div>
-  </div>
-
-</mat-drawer-container>
+    </mat-form-field>
+    <label>Definition</label>
+    <textarea [froalaEditor] formControlName="definition"  [froalaEditor]="editorOptions"></textarea>
+    <!-- <div [froalaView]="form.definition"></div> -->
+    <div class="text-center" style="margin-top:1rem">
+      <button type="submit" mat-raised-button color="accent" [disabled]="!form.valid">Submit</button>
+    </div>
+  </form>
+</div>

@@ -40,12 +40,12 @@ router.post('/', function(req, res, next) {
 // there are no errors we'll again respond 
 // with a success message
 */
-// router.delete('/:user_id',function(req, res){
-//   User.remove({_id:req.params.user_id}, function(err, user){
-//       if (err){ res.send(err); }
+router.delete('/:_id',function(req, res){
+  Definition.remove({_id:req.params._id}, function(err, user){
+      if (err){ res.send(err); }
 
-//       res.json({ message: 'Successfully removed!' });
-//   });
-// })
+      res.json({ message: 'Successfully removed!' });
+  });
+})
 
 module.exports = router;

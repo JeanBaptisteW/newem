@@ -1,0 +1,48 @@
+<div class="example-container mat-elevation-z8">
+  <span>
+    <h2 style="text-align:center">Definition Management
+      <button mat-raised-button style="float:right; background-color:limegreen;color:white; margin-top:2rem;margin-right:2rem;"
+        (click)="onAdd()">Add new Definition</button>
+    </h2>
+  </span>
+
+  <div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource">
+
+    <!-- French Column -->
+    <ng-container matColumnDef="french">
+      <mat-header-cell *matHeaderCellDef> French </mat-header-cell>
+      <mat-cell *matCellDef="let definitions"> {{definitions.french}} </mat-cell>
+    </ng-container>
+
+    <!-- Japanese Column -->
+    <ng-container matColumnDef="japanese">
+      <mat-header-cell *matHeaderCellDef> Japanese </mat-header-cell>
+      <mat-cell *matCellDef="let definitions"> {{definitions.japanese}} </mat-cell>
+    </ng-container>
+
+    <!-- Definition Column -->
+    <ng-container matColumnDef="definition">
+      <mat-header-cell *matHeaderCellDef> Definition </mat-header-cell>
+      <mat-cell *matCellDef="let definitions">
+        <div [innerHTML]="definitions.definition"></div>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Edit Column -->
+    <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef class="text-center"> Edit </mat-header-cell>
+      <mat-cell *matCellDef="let definitions" class="text-center">
+        <mat-icon matTooltip="remove" [matTooltipPosition]="position" svgIcon="remove" (click)="onRemove(definitions._id)"></mat-icon>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
