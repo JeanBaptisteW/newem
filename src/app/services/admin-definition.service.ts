@@ -22,11 +22,16 @@ export class AdminDefinitionService {
     );
   }
 
-
+  updateDefinition(definition):any{
+    return this.http.post(environment.TOKEN_URL + 'definitions/update', definition)
+  }
   getDefinitions(): any {
     return this.httpService.httpGet(environment.TOKEN_URL + 'definitions');
   }
-
+  
+  getDefinition(id): any {
+    return this.httpService.httpGet(environment.TOKEN_URL + 'definitions/'+id);
+  }
   deleteDefinition(id): any {
     return this.http.delete(environment.TOKEN_URL + 'definitions/' + id).pipe(
       tap(_ => console.log(`delete definitions`)),

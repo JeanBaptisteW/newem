@@ -16,7 +16,6 @@ export class AuthService {
   // store the URL so we can redirect after logging in  
 
   login(user): any {
-    console.log(user)
     return this.httpService.httpAuthPost(user, environment.TOKEN_URL+'user/authenticate');
   }
 

@@ -20,6 +20,10 @@ const appRoutes: Routes = [
     component: AdminDashboardComponent
   },
   {
+    path: 'admin-dashboard/:id',
+    component: AdminDashboardComponent
+  },
+  {
     path: 'admin-definitions',
     component: AdminDefinitionsComponent
   },

@@ -17,7 +17,10 @@ export class DefinitionsComponent implements OnInit {
 
   ngOnInit() {
     this.adminDefinitionService.getDefinitions().subscribe(definitions => {
-      this.definitions = definitions
+      let filterd = definitions.filter(function(el){
+        return el.isPublished === true
+       });
+      this.definitions = filterd
     });
   }
 

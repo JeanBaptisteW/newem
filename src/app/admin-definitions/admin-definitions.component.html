@@ -33,11 +33,24 @@
         <div [innerHTML]="definitions.definition"></div>
       </mat-cell>
     </ng-container>
+    <!-- Publish Column -->
+    <ng-container matColumnDef="published">
+      <mat-header-cell *matHeaderCellDef> Published </mat-header-cell>
+      <mat-cell *matCellDef="let definitions">
+        <mat-slide-toggle
+        (change)="testChange({event:$event, definition:definitions})"
+        [color]="color"
+        [checked]="definitions.isPublished?checked:unchecked"
+        [disabled]="disabled">
+    </mat-slide-toggle>
+      </mat-cell>
+    </ng-container>
 
     <!-- Edit Column -->
     <ng-container matColumnDef="edit">
       <mat-header-cell *matHeaderCellDef class="text-center"> Edit </mat-header-cell>
       <mat-cell *matCellDef="let definitions" class="text-center">
+          <mat-icon matTooltip="Edit" [matTooltipPosition]="position" svgIcon="edit" (click)="onUpdate(definitions._id)"></mat-icon>
         <mat-icon matTooltip="remove" [matTooltipPosition]="position" svgIcon="remove" (click)="onRemove(definitions._id)"></mat-icon>
       </mat-cell>
     </ng-container>

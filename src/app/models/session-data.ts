@@ -7,6 +7,14 @@ export abstract class SessionData {
         localStorage.setItem('token', item);
     }
 
+    private static definitionsForm: object;
+    public static get definitionForm(): Object {
+        return this.definitionsForm;
+    }
+    public static set definitionForm(item: Object) {
+        this.definitionsForm = item;
+    }
+
     public static get hasLoggedIn(): boolean {
         if (this.AuthToken) {
             return true;
@@ -30,7 +38,23 @@ export abstract class SessionData {
     public static set redirectURL(item: string) {
         this._redirectURL = item;
     }
+    
 
+    private static triggeraDraft: boolean;
+    public static get triggerDraft(): boolean {
+        return this.triggeraDraft;
+    }
+    public static set triggerDraft(item: boolean) {
+        this.triggeraDraft = item;
+    }
+
+    private static isSubmit: boolean;
+    public static get isSubmitForm(): boolean {
+        return this.isSubmit;
+    }
+    public static set isSubmitForm(item: boolean) {
+        this.isSubmit = item;
+    }
 
     public static clear(): void {
         localStorage.clear();
