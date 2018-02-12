@@ -18,7 +18,7 @@ export class AdminDashboardComponent implements OnInit {
   form: FormGroup;
   isOpen: boolean;
 
-  public editorOptions: Object = { key: '159.89.21.52 mC3B4E4E5G3B2F4I1B1A8C6A6==' };
+  public editorOptions: Object = { key: 'sG1G1B3A8D7B6D5D1E4G3B3B3A6C5F4==' };
   @ViewChild('drawer') drawer: MatSidenav;
 
   constructor(private fb: FormBuilder, public snackBar: MatSnackBar, private route: ActivatedRoute, public router: Router, public adminDefinitionService: AdminDefinitionService) {
